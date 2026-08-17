@@ -11,9 +11,9 @@ const Research = () => {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-black text-white tracking-wider mb-3">
-          RESEARCH & PUBLICATIONS
-        </h2>
+        <h2 className="text-4xl md:text-5xl font-black mb-4">
+            RESEARCH<span className="text-[#d4af37]"> PUBLICATIONS</span>
+          </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] via-[#d4af37] to-[#39ff14] rounded-full"></div>
       </motion.div>
 

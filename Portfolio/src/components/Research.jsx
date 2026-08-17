@@ -1,40 +1,56 @@
 import { motion } from "framer-motion";
-import { FaBookOpen } from "react-icons/fa";
+import { FaExternalLinkAlt, FaBookOpen } from "react-icons/fa";
 
 const Research = () => {
   return (
-    <section id="research" className="py-24 px-4 bg-[#07090e]">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-xs font-mono tracking-widest text-[#00d9ff] uppercase"></span>
-          <h2 className="text-4xl md:text-5xl font-black mb-4 mt-1">
-            RESEARCH <span className="text-[#00d9ff]">PUBLICATION</span>
-          </h2>
-          <div className="w-28 h-1 bg-gradient-to-r from-[#00d9ff] via-[#d4af37] to-transparent mx-auto"></div>
-        </div>
+    <section id="research" className="py-24 px-4 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col items-center mb-16"
+      >
+        <h2 className="text-4xl md:text-5xl font-black text-white tracking-wider mb-3">
+          RESEARCH & PUBLICATIONS
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] via-[#d4af37] to-[#39ff14] rounded-full"></div>
+      </motion.div>
 
+      <div className="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-[#0f1117] border border-[#00d9ff]/30 rounded-2xl p-8 glow-animus"
+          transition={{ duration: 0.5 }}
+          className="portfolio-card bg-[#0f1117] border border-white/10 rounded-2xl p-8 glow-animus space-y-4"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-[#00d9ff]/10 text-[#00d9ff] rounded-xl border border-[#00d9ff]/30">
-              <FaBookOpen size={22} />
-            </div>
-            <span className="text-xs font-mono text-[#d4af37]">ACADEMIC PUBLICATION</span>
+          <div className="flex items-center gap-3 text-[#00f5ff] text-sm font-mono">
+            <FaBookOpen />
+            <span>Academic Research</span>
           </div>
 
-          <h3 className="text-2xl font-bold text-white mb-3">
-            AI-Powered Bargaining System for E-Commerce Platforms
+          <h3 className="text-2xl font-bold text-white">
+            Dynamic Negotiation Engine: An Advanced E-Commerce Framework
           </h3>
-          <p className="text-gray-300 text-sm leading-relaxed mb-6">
-            Authored a research paper focusing on customer engagement, dynamic pricing algorithms, artificial intelligence negotiation frameworks, and consumer behavior analysis.
+
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Focused on developing an automated framework for e-commerce negotiations, integrating smart logic and secure multi-party communication protocols.
           </p>
-          <a href="#" className="inline-block px-6 py-2.5 bg-[#00d9ff] text-black font-bold rounded-xl text-sm hover:scale-105 transition">
-            Read Publication
-          </a>
+
+          <div className="pt-4 flex items-center justify-between flex-wrap gap-4">
+            <span className="text-xs font-mono text-gray-400">Published / Final Year Major Project</span>
+            
+            {/* Direct Google Drive Research Paper Link */}
+            <a
+              href="https://drive.google.com/file/d/1uj5MZmAJwyAW5PZIpR6kGfbYhOctBnSt/view?usp=drivesdk" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-[#00f5ff]/10 border border-[#00f5ff] text-[#00f5ff] font-bold rounded-lg hover:bg-[#00f5ff] hover:text-black transition-all flex items-center gap-2 text-sm"
+            >
+              Read Publication <FaExternalLinkAlt className="text-xs" />
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

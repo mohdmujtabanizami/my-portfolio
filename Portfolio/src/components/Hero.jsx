@@ -57,7 +57,6 @@ const Hero = () => {
           transition={{ duration: 0.7 }}
           className="space-y-7"
         >
-          {/* Feather icon removed, only dot and text kept */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00f5ff]/30 bg-[#00f5ff]/10 text-[#00f5ff] text-sm font-mono">
             <span className="w-2 h-2 rounded-full bg-[#00f5ff] animate-pulse"></span>
             Full-Stack Developer
@@ -104,8 +103,9 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 items-center">
+            {/* Changed "View Contracts" to "View Projects" */}
             <a href="#projects" className="px-8 py-3.5 bg-[#00f5ff] text-black font-extrabold rounded-lg hover:scale-105 transition-all glow-animus">
-              View Contracts
+              View Projects
             </a>
 
             <a

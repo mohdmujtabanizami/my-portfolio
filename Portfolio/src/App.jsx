@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Projects from './components/Project';
 import Research from './components/Research';
 import Certificates from './components/Certificate';
+import Languages from './components/Languages'; 
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
@@ -40,6 +41,7 @@ function App() {
         <Projects />
         <Research />
         <Certificates />
+        <Languages />
         <Contact />
         <Footer />
       </div>

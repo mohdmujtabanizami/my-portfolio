@@ -103,14 +103,15 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 items-center">
-            {/* Changed "View Contracts" to "View Projects" */}
             <a href="#projects" className="px-8 py-3.5 bg-[#00f5ff] text-black font-extrabold rounded-lg hover:scale-105 transition-all glow-animus">
               View Projects
             </a>
 
+            {/* Updated Google Drive Resume Link */}
             <a
-              href="/MUJTABA_Resume.pdf"
-              download
+              href="https://drive.google.com/file/d/10OTOxqa4gLSsozWC6auYq4qkKXjMYFXW/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-3.5 bg-[#d4af37]/10 border-2 border-[#d4af37] text-[#d4af37] font-bold rounded-lg hover:bg-[#d4af37] hover:text-black transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.4)] animate-pulse"
             >
               <FaFileAlt /> Resume

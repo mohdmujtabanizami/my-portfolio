@@ -3,6 +3,24 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const certificates = [
   {
+    title: "Certificate program in MERN Stack",
+    issuer: "NASSCOM",
+    date: "August 2026",
+    link: "https://www.futureskillsprime.in/iDH/user/credential/view/32914-f564cd02-a090-11f1-bcca-005056b48b54"
+  },
+  {
+    title: "Certificate program in React JS",
+    issuer: "NASSCOM",
+    date: "August 2026",
+    link: "https://www.futureskillsprime.in/iDH/user/credential/view/32914-33392d2b-a092-11f1-bcca-005056b48b54"
+  },
+  {
+    title: "Certificate program in Mobile App Development",
+    issuer: "NASSCOM",
+    date: "August 2026",
+    link: "https://www.futureskillsprime.in/iDH/user/credential/view/32914-a2e30244-a092-11f1-bcca-005056b48b54"
+  },
+  {
     title: "Exploratory Data Analysis",
     issuer: "SSC NASSCOM",
     date: "August 2026",

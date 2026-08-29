@@ -1,7 +1,36 @@
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatusMessage("");
+
+    // Yahan apni EmailJS ki IDs daalni hain:
+    emailjs.sendForm(
+      'service_fyqyhe6',     // Example: 'service_abc123'
+      'template_x5ul9fq',    // Example: 'template_xyz789'
+      formRef.current,
+      'xjMtD9NLrSBa5ha6z'      // Example: 'AbCdEfGhIjKlMnOpQ'
+    )
+    .then(() => {
+        setLoading(false);
+        setStatusMessage("Message sent successfully! I will get back to you soon.");
+        formRef.current.reset();
+    }, (error) => {
+        setLoading(false);
+        setStatusMessage("Failed to send message. Please try again later.");
+        console.log(error.text);
+    });
+  };
+
   return (
     <section id="contact" className="py-24 px-4 max-w-7xl mx-auto">
       <motion.div
@@ -45,13 +74,15 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right Side: Clean Form Box (No Slashes / No Citations) */}
+        {/* Right Side: Working Form Box connected with EmailJS */}
         <div className="portfolio-card bg-[#0f1117] border border-[#00f5ff]/30 rounded-2xl p-8 glow-animus relative">
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-6 font-mono text-sm">
+          <form ref={formRef} onSubmit={sendEmail} className="space-y-6 font-mono text-sm">
             <div>
               <label className="block text-xs text-gray-400 mb-2">NAME</label>
               <input 
                 type="text" 
+                name="from_name"
+                required
                 className="w-full bg-[#07070b] border border-white/10 rounded-lg p-3.5 text-white focus:border-[#00f5ff] outline-none transition" 
                 placeholder="Enter your name" 
               />
@@ -61,6 +92,8 @@ const Contact = () => {
               <label className="block text-xs text-gray-400 mb-2">EMAIL</label>
               <input 
                 type="email" 
+                name="from_email"
+                required
                 className="w-full bg-[#07070b] border border-white/10 rounded-lg p-3.5 text-white focus:border-[#00f5ff] outline-none transition" 
                 placeholder="Enter your email" 
               />
@@ -69,7 +102,9 @@ const Contact = () => {
             <div>
               <label className="block text-xs text-gray-400 mb-2">MESSAGE</label>
               <textarea 
+                name="message"
                 rows="4" 
+                required
                 className="w-full bg-[#07070b] border border-white/10 rounded-lg p-3.5 text-white focus:border-[#00f5ff] outline-none transition resize-none" 
                 placeholder="Tell me about your project..."
               ></textarea>
@@ -77,10 +112,17 @@ const Contact = () => {
 
             <button 
               type="submit" 
-              className="w-full py-4 bg-gradient-to-r from-[#00f5ff] to-[#39ff14] text-black font-extrabold rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+              disabled={loading}
+              className="w-full py-4 bg-gradient-to-r from-[#00f5ff] to-[#39ff14] text-black font-extrabold rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer disabled:opacity-50"
             >
-              <FaPaperPlane /> Send Message
+              <FaPaperPlane /> {loading ? "Sending..." : "Send Message"}
             </button>
+
+            {statusMessage && (
+              <p className={`text-center text-xs mt-2 ${statusMessage.includes("success") ? "text-green-400" : "text-red-400"}`}>
+                {statusMessage}
+              </p>
+            )}
           </form>
         </div>
       </div>

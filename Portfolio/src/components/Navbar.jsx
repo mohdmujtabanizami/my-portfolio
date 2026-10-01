@@ -7,12 +7,13 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "About", href: "#about", id: "about" },
+    { name: "Experience", href: "#experience", id: "experience" }, // Yahan Experience add kiya gaya hai
     { name: "Education", href: "#education", id: "education" },
     { name: "Skills", href: "#skills", id: "skills" },
     { name: "Projects", href: "#projects", id: "projects" },
     { name: "Research", href: "#research", id: "research" },
     { name: "Certificates", href: "#certificates", id: "certificates" },
-    { name: "Languages", href: "#languages", id: "languages" }, // Yahan add kiya gaya hai
+    { name: "Languages", href: "#languages", id: "languages" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
@@ -33,7 +34,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }); // Note: useEffect ki dependency array yahan default rakhi hai jaisi aapke code mein thi
+  }); 
 
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();

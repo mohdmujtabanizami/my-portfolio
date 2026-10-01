@@ -111,7 +111,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="https://drive.google.com/file/d/10OTOxqa4gLSsozWC6auYq4qkKXjMYFXW/view?usp=drivesdk"
+                href="https://drive.google.com/file/d/1GkcOHPHhtHHIa7rYUNK6dti0DqoqjV-d/view?usp=drivesdk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 bg-[#d4af37]/10 border-2 border-[#d4af37] text-[#d4af37] font-bold rounded-lg hover:bg-[#d4af37] hover:text-black transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.4)] animate-pulse"
@@ -186,29 +186,28 @@ const Hero = () => {
               exit={{ scale: 0.5, y: 50, opacity: 0 }}
               transition={{ type: "spring", damping: 15, stiffness: 100 }}
               className="relative group"
-              onClick={(e) => e.stopPropagation()} // Prevents closing when clicking on the photo itself
+              onClick={(e) => e.stopPropagation()} 
             >
 
-              {/* Photo Container with Glow and Hover Effects */}
-<div className="relative rounded-2xl overflow-hidden border-2 border-[#00f5ff] shadow-[0_0_40px_rgba(0,245,255,0.4)] group-hover:shadow-[0_0_60px_rgba(57,255,20,0.6)] group-hover:border-[#39ff14] transition-all duration-500">
-  
-  {/* Naya Close Button (Frame ke andar, stylish blur ke sath) */}
-  <button 
-    onClick={(e) => {
-      e.stopPropagation();
-      setIsPhotoOpen(false);
-    }}
-    className="absolute top-3 right-3 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/40 text-gray-300 hover:text-white hover:bg-red-500 backdrop-blur-sm transition-all shadow-lg"
-  >
-    <FaTimes className="text-xl" />
-  </button>
+              {/* Photo Container with Red Glow and Hover Effects */}
+              <div className="relative rounded-2xl overflow-hidden border-2 border-red-500 shadow-[0_0_40px_rgba(255,0,0,0.5)] group-hover:shadow-[0_0_60px_rgba(255,69,0,0.7)] group-hover:border-[#ff4500] transition-all duration-500">
+                
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsPhotoOpen(false);
+                  }}
+                  className="absolute top-3 right-3 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/40 text-gray-300 hover:text-white hover:bg-red-500 backdrop-blur-sm transition-all shadow-lg border border-white/10"
+                >
+                  <FaTimes className="text-xl" />
+                </button>
 
-  <img 
-    src="/profile.png" 
-    alt="Mohd Mujtaba Nizami" 
-    className="max-w-[280px] sm:max-w-md max-h-[75vh] object-cover hover:scale-105 transition-transform duration-500" 
-  />
-</div>
+                <img 
+                  src="/profile.png" 
+                  alt="Mohd Mujtaba Nizami" 
+                  className="max-w-[280px] sm:max-w-md max-h-[75vh] object-cover hover:scale-105 transition-transform duration-500" 
+                />
+              </div>
             </motion.div>
           </motion.div>
         )}

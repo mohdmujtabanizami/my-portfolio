@@ -4,9 +4,9 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 const majorProjects = [
   {
     title: "BargainCart – AI-Powered E-Commerce & Rental Platform",
-    role: "Full-Stack Developer (Solo Project)",
+    role: "Full-Stack Developer (IBM Virtual Internship Project)",
     points: [
-      "Developed a modern full-stack e-commerce and rental web application featuring a dual store system supporting Buy and Rent options.",
+      "Developed a modern full-stack e-commerce and rental web application during the IBM Virtual Internship, featuring a dual store system supporting Buy and Rent options.",
       "Implemented an interactive AI Bargaining Assistant for dynamic price negotiation within smart limits before checkout.",
       "Built a live Admin Dashboard for inventory management, real-time order/rental tracking with timestamps, and admin-controlled cancellations."
     ],
@@ -16,9 +16,9 @@ const majorProjects = [
   },
   {
     title: "ScoreHub – Live Football Scores & Statistics Platform",
-    role: "Full-Stack Developer (Solo Project)",
+    role: "Full-Stack Developer (Independent Solo Project)",
     points: [
-      "Developed a responsive football web application using React.js to display live scores, fixtures, standings, team details, and player statistics.",
+      "Developed a responsive football web application independently using React.js to display live scores, fixtures, standings, team details, and player statistics.",
       "Integrated football APIs to fetch real-time match data, league standings, top scorers, and detailed team information, tested via Postman.",
       "Built reusable React components and implemented dynamic routing for team pages, player profiles, and match details.",
       "Implemented Firebase Authentication with Google Sign-In for secure user access and personalized experiences."
@@ -28,10 +28,10 @@ const majorProjects = [
     live: "https://football-live-score-one.vercel.app"
   },
   {
-    title: "AI-Powered E-Commerce Website with Dynamic Bargaining System",
-    role: "Frontend Developer (Team Project)",
+    title: "AI-Powered E-Commerce Website with Dynamic Bargaining",
+    role: "Frontend Developer (Final Year B.Tech Group Project)",
     points: [
-      "Developed a responsive AI-powered e-commerce web application using React.js and Next.js, enabling users to browse products and interact with a dynamic bargaining system.",
+      "Collaborated in a team for our final year college project to develop a responsive AI-powered e-commerce web application using React.js and Next.js.",
       "Designed and implemented reusable UI components to improve maintainability, user experience, and application scalability.",
       "Integrated REST APIs for product management, user authentication, and real-time price negotiation features.",
       "Built a mobile-friendly interface using Tailwind CSS, ensuring responsive design across different devices and screen sizes."
@@ -43,6 +43,18 @@ const majorProjects = [
 ];
 
 const miniProjects = [
+  {
+    title: "CloudVault – Secure QR File Sharing System",
+    role: "Solo Project",
+    points: [
+      "Developed a secure full-stack web application allowing users to batch-upload up to 100 files, instantly generating custom QR codes and shareable links.",
+      "Integrated AES-256 encryption for optional PIN protection and engineered a custom link expiration mechanism (1, 7, or 30 days) for automated access revocation.",
+      "Configured dynamic Express serverless routing on Vercel, optimized storage via Cloudinary API, and implemented real-time 'Seen' view notifications using Server-Sent Events."
+    ],
+    stack: ["Node.js", "Express.js", "Vanilla JS", "Cloudinary", "Multer", "Vercel"],
+    github: "https://github.com/mohdmujtabanizami/qr-file-share",
+    live: "https://qr-file-share-two.vercel.app"
+  },
   {
     title: "HisabKitab – Ultimate Financial Pro Tracker",
     role: "Solo Project",

@@ -33,7 +33,7 @@ const About = () => {
           {/* 4 Counter Cards */}
           <div className="grid grid-cols-2 gap-4 pt-4">
             <div className="portfolio-card bg-[#0f1117] border border-white/10 rounded-2xl p-6 glow-animus text-center">
-              <h4 className="text-2xl font-black text-[#00f5ff] mb-1">3+</h4>
+              <h4 className="text-2xl font-black text-[#00f5ff] mb-1">7+</h4>
               <p className="text-xs font-mono text-gray-400">Projects Built</p>
             </div>
             <div className="portfolio-card bg-[#0f1117] border border-white/10 rounded-2xl p-6 glow-animus text-center">

@@ -3,6 +3,13 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const certificates = [
   {
+    title: "Virtual Internship: Web, Mobile Development & Marketing",
+    issuer: "IBM",
+    date: "September 2026",
+    link: "https://courses.ibmmooc.skillsnetwork.site/certificates/ea39690a892440ebb72a3be188780bf6",
+    theme: "red"
+  },
+  {
     title: "Certificate program in MERN Stack",
     issuer: "NASSCOM",
     date: "August 2026",
@@ -63,26 +70,41 @@ const Certificates = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {certificates.map((cert, index) => (
-            <a
-              key={index}
-              href={cert.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="portfolio-card bg-[#0f1117] border border-white/10 rounded-2xl p-6 glow-animus flex justify-between items-center group cursor-pointer transition-all duration-300 hover:border-[#00d9ff]/60"
-            >
-              <div className="space-y-1">
-                <span className="text-xs font-mono text-[#d4af37]">{cert.date}</span>
-                <h3 className="text-lg font-bold text-white group-hover:text-[#00d9ff] transition">
-                  {cert.title}
-                </h3>
-                <p className="text-gray-400 text-sm">{cert.issuer}</p>
-              </div>
-              <div className="text-gray-400 group-hover:text-[#00d9ff] transition p-3 rounded-xl bg-black/40 border border-white/5">
-                <FaExternalLinkAlt size={18} />
-              </div>
-            </a>
-          ))}
+          {certificates.map((cert, index) => {
+            const isRed = cert.theme === "red";
+
+            return (
+              <a
+                key={index}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`portfolio-card bg-[#0f1117] border border-white/10 rounded-2xl p-6 flex justify-between items-center group cursor-pointer transition-all duration-300 ${
+                  isRed 
+                    ? "shadow-[0_0_20px_rgba(255,0,0,0.5)] hover:border-red-500/80 hover:shadow-[0_0_40px_rgba(255,0,0,0.9)]" 
+                    : "glow-animus hover:border-[#00d9ff]/60"
+                }`}
+              >
+                <div className="space-y-1">
+                  <span className="text-xs font-mono text-[#d4af37]">{cert.date}</span>
+                  <h3 className={`text-lg font-bold text-white transition ${
+                    isRed ? "group-hover:text-red-500" : "group-hover:text-[#00d9ff]"
+                  }`}>
+                    {cert.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">{cert.issuer}</p>
+                </div>
+                
+                <div className={`transition p-3 rounded-xl bg-black/40 border border-white/5 text-gray-400 ${
+                  isRed 
+                    ? "group-hover:text-red-500 group-hover:border-red-500/40" 
+                    : "group-hover:text-[#00d9ff] group-hover:border-[#00d9ff]/30"
+                }`}>
+                  <FaExternalLinkAlt size={18} />
+                </div>
+              </a>
+            );
+          })}
         </div>
       </motion.div>
     </section>
